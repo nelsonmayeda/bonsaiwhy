@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Soil Calculator</title>
+    <meta name="description" content="Calculate soil field capacity">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="/Content/png/graph.png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i" rel="stylesheet">
+    
+    <link href="../../Content/css/Soil.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="body-header" class="header">
+        <nav class="navbar">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="../../">BonsaiWhy</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div><div class="navbar-collapse collapse">
+        <ul class="navbar-nav">
+            <li class="navbar-item" id="nav-light">
+                <a class="navbar-link" href="../../light/">Light Calculator</a>
+            </li><li class="navbar-item" id="nav-soil">
+                <a class="navbar-link" href="../">Soil Calculator</a>
+            </li><li class="navbar-item" id="nav-fertilizer">
+                <a class="navbar-link" href="../../fertilizer/">Fertilizer Calculator</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    </header>
+    <main id="body-main" class="main">
+        
+
+<h1 class="heading">Soil Calculator</h1>
+<div>
+    <div id="source">
+        <h2 class="heading">Substrate Options</h2>
+        <div id="substrate-container" class="substrate-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div id="destination">
+        <h2 class="heading">Mixes</h2>
+        <button id="btn-add" class="submit" value="New Mix">New Mix</button>
+        <div id="mixes-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div id="output">
+        <h2 class="heading">Chart</h2>
+        <div id="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+    </div>
+</div>
+
+    </main>
+    <footer id="body-footer" class="footer">
+        <nav class="footer-sites">
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../../">Home</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="../../contact/">contact</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../../about/">about</a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../../light/">Light</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="../../light/calculator/">calculator</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../../light/about/">about</a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../">Soil</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="">calculator</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../about/">about</a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../../fertilizer/">Fertilizer</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="../../fertilizer/calculator/">calculator</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../../fertilizer/about/">about</a>
+            </li>
+        </ul>
+    </section>
+</nav>
+<div class="copyright">BonsaiWhy &copy; 2016</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7496598263316713" data-ad-slot="8994102982" data-ad-format="auto">
+        </ins>
+    </footer>
+    <script src="../../Scripts/app/navbar.es5.min.js"></script>
+    
+
+
+<script data-main="/Scripts/dist/soil/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+
+
+    <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-73068722-1', 'auto');
+		ga('send', 'pageview');
+    </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</body>
+</html>
