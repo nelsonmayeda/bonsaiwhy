@@ -1,0 +1,11 @@
+﻿/// <reference path="Reset.scss" />
+@import 'Reset.scss';
+/*theme for site*/
+$primary-color:#37474F;/*blue grey 800 background*/
+$secondary-color:#263238;/*blue grey 900 content*/
+$accent-color:#00BCD4;/*cyan 500 accent*/
+$font-color:white;
+$font-family:'Open Sans', sans-serif;
+$z-back:7000;
+$z-front:8000;
+$z-modal:9000;

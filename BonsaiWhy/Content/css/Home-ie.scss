@@ -1,0 +1,49 @@
+﻿/// <reference path="Home.scss" />
+@import 'Home.scss';
+/*fallback for improper svg aspect ratio sizing in ie
+    requires both width and height or it will default to 100% (not relative) in width/height not specified
+*/
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+   /* IE10/11 specific styles go here */  
+    .sun{
+        /*width:20vw;*/
+        height: 20vw; 
+    }
+    .lake{
+        /*width:100vw;*/
+        height: 5vw; 
+    }
+    .tree{
+        /*height:50vh;*/
+        width: 43vh; 
+    }
+    .hill{
+        /*width:50vw;*/
+        height: 14vw; 
+    }
+    .cave{
+        /*width:60vw;*/
+        height: 17vw; 
+    }
+    .ground{
+        /*width:60vw;*/
+        height: 17vw; 
+    }
+    .water{
+        /*height: 50vh;*/
+        width: 176vh; 
+    }
+    .soil{
+        /*height: 50vh;*/
+        width: 176vh;
+    }
+    .roots{
+        /*width:75vw;*/
+        height: 21vw; 
+    }
+    .drop{
+        /*width:1vh;*/
+        height:2vh;
+    }
+
+}

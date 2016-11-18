@@ -1,0 +1,47 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="gooey-sun">
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="20"
+        result="blur1" ></feGaussianBlur>
+      <feColorMatrix
+        in="blur1"
+        mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+        result="goo1" ></feColorMatrix>
+      <feComposite
+        in="SourceGraphic"
+        in2="goo1"
+        operator="atop" ></feComposite>
+    </filter>
+
+    <filter id="gooey-water">
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="20"
+        result="blur2" ></feGaussianBlur>
+      <feColorMatrix
+        in="blur2"
+        mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -5"
+        result="goo2" ></feColorMatrix>
+      <feComposite
+        in="SourceGraphic"
+        in2="goo2"
+        operator="atop"></feComposite>
+    </filter>
+    <filter id="gooey-soil">
+      <feGaussianBlur in="SourceGraphic"
+                      stdDeviation="5"
+                      result="blur3"></feGaussianBlur>
+      <feColorMatrix in="blur3"
+                     mode="matrix"
+                     values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                     result="goo3"></feColorMatrix>
+      <feComposite in="SourceGraphic"
+                   in2="goo3"
+                   operator="atop"></feComposite>
+    </filter>
+  </defs>
+</svg>

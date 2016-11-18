@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "BonsaiWhy";
+    ViewBag.Description = "Exploring the numbers behind tradition";
+}
+@section css{
+<link href="/Content/css/Home-ie.min.css" rel="stylesheet" />
+}
+<!-- Light layer-->
+<div class="parallax" id="Light">
+    <h2 class="layer tip" id="light-tip"
+        style="top:50%;left:50%;transform: translate(-50%, -50%);"
+        data-position-x="center" data-position-y="center">
+        <a href="./light">Light Calculator</a>
+    </h2>
+    <div class="filter" style="-webkit-filter: url(#gooey-sun);filter: url(#gooey-sun);" >
+        <svg class="layer sun"  
+           style="top:50%;left:50%;transform: translate(-50%, -50%);"
+           data-position-x="center" data-position-y="center"
+           data-parallax-delay=".5" data-parallax-translatey="3"
+             viewBox="0 0 100 100">
+            <use xlink:href="~/Content/svg/home.svg#sun"></use>
+        </svg>
+        <svg class="layer lake" 
+             style="bottom:0;"
+            data-position-y="bottom"
+             viewBox="0 0 100 5">
+            <use xlink:href="~/Content/svg/home.svg#lake"></use>
+        </svg>
+    </div>
+    <svg class="layer hill"
+             style="bottom:0;"
+            data-position-y="bottom"
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#hill"></use>
+    </svg>
+    <svg class="layer hill"
+            style="right:0;bottom:0;"
+            data-position-x="right" data-position-y="bottom" 
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#hill-right"></use>
+    </svg>
+    <svg class="layer tree"
+             style="bottom:0;"
+            data-position-y="bottom"
+            viewBox="0 0 1316.4558 1530.598">
+        <use xlink:href="~/Content/svg/home.svg#tree"></use>
+    </svg>
+</div>            
+<!-- Soil layer-->
+<div class="parallax" id="Soil">
+    <h2 class="layer tip" id="soil-tip"
+        style="top:50%;left:50%;transform: translate(-50%, -50%);"
+        data-position-x="center" data-position-y="center">
+        <a href="./soil">Soil Calculator</a>
+    </h2>
+    <svg id="gooWater" 
+            class="layer water"
+            data-parallax-reveal="2" 
+            viewBox="0 25 2400 683.78411">
+        <use xlink:href="~/Content/svg/home.svg#water"></use>
+    </svg>
+    <svg id="gooSoil"
+            class="layer soil"
+            viewBox="0 25 2400 683.78411">
+        <use xlink:href="~/Content/svg/home.svg#soil"></use>
+    </svg>
+    <svg 
+            class="layer cave"
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#cave"></use>
+    </svg>
+    <svg class="layer cave"
+             style="right:0;"
+            data-position-x="right"
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#cave-right"></use>
+    </svg>
+    <svg 
+            class="layer ground"
+             style="bottom:0;"
+            data-position-y="bottom"
+            viewBox="0 0 1920.0032 547.71832"
+            >
+        <use xlink:href="~/Content/svg/home.svg#hill"></use>
+    </svg>
+    <svg class="layer ground"
+             style="right:0;bottom:0;"
+            data-position-x="right" data-position-y="bottom"
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#hill-right"></use>
+    </svg>
+</div>            
+<!-- Fertilizer layer-->
+<div class="parallax" id="Fertilizer">
+    <h2 class="layer tip" id="fertilizer-tip"
+        style="top:50%;left:50%;transform: translate(-50%, -50%);"
+        data-position-x="center" data-position-y="center">
+        <a href="./fertilizer">Fertilizer Calculator</a>
+    </h2>
+    <svg class="layer roots"
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#cave"></use>
+    </svg>
+    <svg class="layer roots"
+            data-position-x="right"
+             style="right:0;"
+            viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#cave-right"></use>
+    </svg>
+    <svg 
+            viewBox="0 0 30.428245 73.506958"
+            class="layer drop"
+            id="firstdrop">
+        <use xlink:href="~/Content/svg/home.svg#drop"></use>
+    </svg>
+
+    <div class="layer rect"
+         style="bottom:0;"
+         data-position-y="bottom"></div>
+    <svg class="layer hill"
+         style="bottom:0;"
+         data-position-y="bottom"
+         viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#hill"></use>
+    </svg>
+    <svg class="layer hill"
+         style="right:0;bottom:0;"
+         data-position-x="right" data-position-y="bottom"
+         viewBox="0 0 1920.0032 547.71832">
+        <use xlink:href="~/Content/svg/home.svg#hill-right"></use>
+    </svg>
+</div>
+
+@section scripts{
+@*<script src='~/Scripts/app/home/svg.js'></script>
+<script src='~/Scripts/app/home/parallax.js'></script>
+<script src='~/Scripts/app/home/rain.js'></script>
+<script src='~/Scripts/app/home/menu.js'></script>
+<script src='~/Scripts/app/home/ui.js'></script>
+<script src='~/Scripts/app/home/main.js'></script>*@
+<script data-main="/Scripts/dist/home/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+}

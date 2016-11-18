@@ -1,0 +1,51 @@
+﻿/// <reference path="Theme.scss" />
+@import 'Theme.scss';
+/*normalize for site display*/
+body{
+    background-color:$primary-color;
+    color: $font-color;
+    font-family: $font-family;
+}
+h1{
+    font-size:3.5rem;
+    font-style: italic;
+    line-height: normal;/*descenders getting clipped off*/
+}
+h2{
+    font-size: 2rem;
+    font-style: italic;
+    line-height: normal;/*descenders getting clipped off*/
+}
+h3{
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: normal;/*descenders getting clipped off*/
+}
+h4{
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: normal;/*descenders getting clipped off*/
+}
+img{
+    max-width:100%;
+}
+a{
+    text-decoration:none;
+/*anchors not inheritting properly*/
+    color: $font-color;
+    font-family: $font-family;
+}
+/*Corresponds to bootstrap sm device size*/
+@media (max-width: 767px)
+{
+    h1{
+        font-size:2rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    h3{
+        font-size: 1.25rem;
+    }
+    /*note that h4 stays at the same font size*/
+}

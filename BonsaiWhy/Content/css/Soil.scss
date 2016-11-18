@@ -1,0 +1,32 @@
+﻿/// <reference path="Site.scss" />
+@import 'Site.scss';
+
+.substrate,.mix,.submit{
+    display: inline-block;
+    margin: 0.5em 0.5em 0 0;
+    padding: 0.5em 1em;
+    color: $font-color;
+    font-size:1rem;
+    text-align: center;
+}
+.substrate {
+    border: none;
+    background-color: $secondary-color;
+}
+.submit{
+    background-color: $secondary-color;
+}
+.mix{
+    border-radius: 1em;
+    min-height:3em;
+    min-width:3em;
+}
+.active{
+    border: solid 1px $font-color;
+}
+#chart-container {
+    background-color: $secondary-color;
+    margin-top: 10px;
+    min-height:350px;
+    padding:10px 10px 10px 0;
+}

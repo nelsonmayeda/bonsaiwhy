@@ -1,0 +1,192 @@
+﻿input,
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*theme for site*/
+/*blue grey 800 background*/
+/*blue grey 900 content*/
+/*cyan 500 accent*/
+/*normalize for site display*/
+body {
+  background-color: #37474F;
+  color: white;
+  font-family: "Open Sans", sans-serif; }
+
+*, *:before, *:after {
+  color: white;
+  font-family: "Open Sans", sans-serif; }
+
+h1 {
+  font-size: 3.75rem;
+  font-style: italic; }
+
+h2 {
+  font-size: 2rem;
+  font-style: italic; }
+
+h3 {
+  font-size: 1.5rem;
+  font-style: italic; }
+
+h4 {
+  font-size: 1.125rem; }
+
+img {
+  max-width: 100%; }
+
+a {
+  text-decoration: none; }
+
+/*Corresponds to bootstrap sm device size*/
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem; }
+  h2 {
+    font-size: 1.5rem; }
+  h3 {
+    font-size: 1.25rem; }
+  /*note that h4 stays at the same font size*/ }
+
+.main {
+  padding: 1em; }
+
+.heading {
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+.content {
+  margin: 1rem 0; }
+
+.link {
+  text-decoration: underline; }
+
+/*header*/
+.navbar {
+  background: #263238;
+  text-align: center; }
+
+.navbar-header, .navbar-collapse, .navbar-item {
+  display: inline-block; }
+
+.navbar-brand {
+  display: inline-block;
+  font-size: 2rem;
+  font-style: italic;
+  padding: 0.5em;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+.navbar-toggle {
+  margin: 0.5em;
+  font-size: 2rem;
+  display: none; }
+
+.navbar-link {
+  display: block;
+  font-size: 1.5rem;
+  font-style: italic;
+  padding: 0.5em;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+@media (max-width: 768px) {
+  .navbar-header {
+    text-align: left; }
+  .navbar-header, .navbar-collapse, .navbar-item {
+    display: block; }
+  .collapse {
+    display: none; }
+  .navbar-toggle {
+    display: block;
+    float: right;
+    border: solid 0.029em white;
+    padding: 0.264em 0.294em;
+    background-color: transparent;
+    border-radius: 0.118em; }
+  .navbar-toggle .icon-bar {
+    background-color: white;
+    display: block;
+    width: 0.647em;
+    height: 0.059em; }
+  .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 0.118em; } }
+
+/*footer*/
+.footer {
+  background: #263238;
+  text-align: center; }
+
+.footer-section {
+  padding: 1em;
+  display: inline-block; }
+
+.footer-heading {
+  font-weight: bold; }
+
+.footer-item {
+  margin-top: 1em;
+  text-decoration: underline; }
+
+.copyright {
+  padding: 1em;
+  text-align: left; }
+
+/*sticky footer*/
+html, body {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  width: 100%;
+  display: table;
+  overflow: hidden; }
+
+.header, footer {
+  display: table-row; }
+
+.main {
+  display: table-cell;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle; }
+

@@ -1,0 +1,23 @@
+﻿/// <reference path="Site.scss" />
+@import 'Site.scss';
+
+.location,.azimuth,.bulb,.distance,.coverage {
+    display: inline-block;
+
+    margin: 0.5em 0.5em 0 0;
+    border: none;
+    padding: 0.5em 1em;
+    background-color: $secondary-color;
+    color: $font-color;
+    font-size:1rem;
+    text-align: center;
+}
+.active{
+    border: solid 1px $font-color;
+}
+#chart-container {
+    background-color: $secondary-color;
+    margin-top: 10px;
+    min-height:500px;
+    padding:10px 10px 10px 0;
+}

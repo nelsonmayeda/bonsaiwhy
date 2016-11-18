@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5890AB64-880C-415A-91BB-0F916F2E381B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BonsaiWhy</RootNamespace>
+    <AssemblyName>BonsaiWhy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FertilizerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HormoneController.cs" />
+    <Compile Include="Controllers\LightController.cs" />
+    <Compile Include="Controllers\SoilController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\About.css">
+      <DependentUpon>About.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\About.min.css">
+      <DependentUpon>About.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Contact.css">
+      <DependentUpon>Contact.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Contact.min.css">
+      <DependentUpon>Contact.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Fertilizer.css">
+      <DependentUpon>Fertilizer.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Fertilizer.min.css">
+      <DependentUpon>Fertilizer.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Reset.css">
+      <DependentUpon>Reset.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Reset.min.css">
+      <DependentUpon>Reset.css</DependentUpon>
+    </Content>
+    <Content Include="Content\svg\filters.svg" />
+    <Content Include="Content\png\graph.png" />
+    <Content Include="Content\css\Home-ie.css">
+      <DependentUpon>Home-ie.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Home-ie.min.css">
+      <DependentUpon>Home-ie.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Home.css">
+      <DependentUpon>Home.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Home.min.css">
+      <DependentUpon>Home.css</DependentUpon>
+    </Content>
+    <Content Include="Content\png\akadama.png" />
+    <Content Include="Content\png\bark.png" />
+    <Content Include="Content\png\de.png" />
+    <Content Include="Content\png\grit.png" />
+    <Content Include="Content\png\lava.png" />
+    <Content Include="Content\png\perlite.png" />
+    <Content Include="Content\png\sand.png" />
+    <Content Include="Content\png\soil.png" />
+    <Content Include="Content\png\turface.png" />
+    <Content Include="Content\css\Light.css">
+      <DependentUpon>Light.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Light.min.css">
+      <DependentUpon>Light.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Normal.css">
+      <DependentUpon>Normal.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Normal.min.css">
+      <DependentUpon>Normal.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Site.css">
+      <DependentUpon>Site.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Soil.css">
+      <DependentUpon>Soil.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Soil.min.css">
+      <DependentUpon>Soil.css</DependentUpon>
+    </Content>
+    <Content Include="Content\svg\home.svg" />
+    <Content Include="Content\css\Theme.css">
+      <DependentUpon>Theme.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Theme.min.css">
+      <DependentUpon>Theme.css</DependentUpon>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\css\Fertilizer.scss" />
+    <Content Include="Content\css\About.scss" />
+    <Content Include="Content\css\Home-ie.scss" />
+    <Content Include="Content\css\Contact.scss" />
+    <Content Include="Content\css\Normal.scss" />
+    <Content Include="Content\css\Reset.scss" />
+    <None Include=".bin\node.cmd" />
+    <None Include="Content\css\Site.scss" />
+    <Content Include="Content\css\Soil.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\css\Light.scss" />
+    <Content Include="Content\css\Home.scss" />
+    <Content Include="Content\css\Theme.scss" />
+    <Content Include="Content\svg\cave-right.svg" />
+    <Content Include="Content\svg\cave.svg" />
+    <Content Include="Content\svg\drop.svg" />
+    <Content Include="Content\svg\ground.svg" />
+    <Content Include="Content\svg\hill-right.svg" />
+    <Content Include="Content\svg\hill.svg" />
+    <Content Include="Content\svg\lake.svg" />
+    <Content Include="Content\svg\soil.svg" />
+    <Content Include="Content\svg\sun.svg" />
+    <Content Include="Content\svg\tree.svg" />
+    <Content Include="Content\svg\water.svg" />
+    <None Include="Properties\PublishProfiles\bonsaiwhy - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bonsaiwhy - Web Deploy.pubxml" />
+    <Content Include="Scripts\app\fertilizer\calculator.es5.js">
+      <DependentUpon>calculator.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\calculator.es5.min.js">
+      <DependentUpon>calculator.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\calculator.js" />
+    <Content Include="Scripts\app\fertilizer\fertilizerdata.es5.js">
+      <DependentUpon>fertilizerdata.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\fertilizerdata.es5.min.js">
+      <DependentUpon>fertilizerdata.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\fertilizerdata.js" />
+    <Content Include="Scripts\app\fertilizer\main.es5.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\main.es5.min.js">
+      <DependentUpon>main.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\main.js" />
+    <Content Include="Scripts\app\fertilizer\ui.es5.js">
+      <DependentUpon>ui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\ui.es5.min.js">
+      <DependentUpon>ui.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\fertilizer\ui.js" />
+    <Content Include="Scripts\app\home\main.es5.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\main.es5.min.js">
+      <DependentUpon>main.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\main.js" />
+    <Content Include="Scripts\app\home\menu.es5.js">
+      <DependentUpon>menu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\menu.es5.min.js">
+      <DependentUpon>menu.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\parallax.es5.js">
+      <DependentUpon>parallax.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\parallax.es5.min.js">
+      <DependentUpon>parallax.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\parallax.js" />
+    <Content Include="Scripts\app\home\rain.es5.js">
+      <DependentUpon>rain.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\rain.es5.min.js">
+      <DependentUpon>rain.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\rain.js" />
+    <Content Include="Scripts\app\home\menu.js" />
+    <Content Include="Scripts\app\home\svg.es5.js">
+      <DependentUpon>svg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\svg.es5.min.js">
+      <DependentUpon>svg.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\svg.js" />
+    <Content Include="Scripts\app\home\ui.es5.js">
+      <DependentUpon>ui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\ui.es5.min.js">
+      <DependentUpon>ui.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\home\ui.js" />
+    <Content Include="Scripts\app\light\bulbdata.es5.js">
+      <DependentUpon>bulbdata.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\bulbdata.es5.min.js">
+      <DependentUpon>bulbdata.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\bulbdata.js" />
+    <Content Include="Scripts\app\light\calculator.es5.js">
+      <DependentUpon>calculator.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\calculator.es5.min.js">
+      <DependentUpon>calculator.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\chartmaker.es5.js">
+      <DependentUpon>chartmaker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\chartmaker.es5.min.js">
+      <DependentUpon>chartmaker.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\chartmaker.js" />
+    <Content Include="Scripts\app\light\colormaker.es5.js">
+      <DependentUpon>colormaker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\colormaker.es5.min.js">
+      <DependentUpon>colormaker.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\colormaker.js" />
+    <Content Include="Scripts\app\light\main.es5.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\main.es5.min.js">
+      <DependentUpon>main.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\main.js" />
+    <Content Include="Scripts\app\light\sundata.es5.js">
+      <DependentUpon>sundata.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\sundata.es5.min.js">
+      <DependentUpon>sundata.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\ui.es5.js">
+      <DependentUpon>ui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\light\ui.es5.min.js">
+      <DependentUpon>ui.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\navbar.es5.js">
+      <DependentUpon>navbar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\navbar.es5.min.js">
+      <DependentUpon>navbar.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\navbar.js" />
+    <Content Include="Scripts\app\soil\calculator.es5.js">
+      <DependentUpon>calculator.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\calculator.es5.min.js">
+      <DependentUpon>calculator.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\chartmaker.es5.js">
+      <DependentUpon>chartmaker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\chartmaker.es5.min.js">
+      <DependentUpon>chartmaker.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\chartmaker.js" />
+    <Content Include="Scripts\app\soil\colormaker.es5.js">
+      <DependentUpon>colormaker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\colormaker.es5.min.js">
+      <DependentUpon>colormaker.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\colormaker.js" />
+    <Content Include="Scripts\app\soil\data.es5.js">
+      <DependentUpon>data.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\data.es5.min.js">
+      <DependentUpon>data.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\data.js" />
+    <Content Include="Scripts\app\soil\main.es5.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\main.es5.min.js">
+      <DependentUpon>main.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\main.js" />
+    <Content Include="Scripts\app\soil\pottingsoildata.es5.js">
+      <DependentUpon>pottingsoildata.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\pottingsoildata.es5.min.js">
+      <DependentUpon>pottingsoildata.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\pottingsoildata.js" />
+    <Content Include="Scripts\app\soil\ui.es5.js">
+      <DependentUpon>ui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\ui.es5.min.js">
+      <DependentUpon>ui.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\soil\ui.js" />
+    <Content Include="Scripts\app\light\calculator.js" />
+    <Content Include="Scripts\app\light\sundata.js" />
+    <Content Include="Scripts\app\light\ui.js" />
+    <Content Include="Scripts\buildFertilizer.js" />
+    <Content Include="Scripts\buildHome.js" />
+    <Content Include="Scripts\buildLight.js" />
+    <Content Include="Scripts\buildSoil.js" />
+    <Content Include="Scripts\dist\fertilizer\main.js" />
+    <Content Include="Scripts\dist\home\main.js" />
+    <Content Include="Scripts\dist\light\main.js" />
+    <Content Include="Scripts\dist\soil\main.js" />
+    <Content Include="Scripts\lib\Chart.js" />
+    <Content Include="Scripts\lib\Chart.min.js" />
+    <Content Include="Scripts\lib\molarmass.es5.js">
+      <DependentUpon>molarmass.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\molarmass.es5.min.js">
+      <DependentUpon>molarmass.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\molarmass.js" />
+    <Content Include="Scripts\lib\suncalc.es5.js">
+      <DependentUpon>suncalc.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\suncalc.es5.min.js">
+      <DependentUpon>suncalc.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lib\suncalc.js" />
+    <Content Include="Scripts\app\soil\calculator.js" />
+    <Content Include="Scripts\lib\r.js" />
+    <Content Include="Scripts\lib\require.js" />
+    <Content Include="Scripts\_references.js" />
+    <None Include="Views\Hormone\About.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Soil\About.cshtml" />
+    <Content Include="Views\Soil\Index.cshtml" />
+    <Content Include="Views\Light\Index.cshtml" />
+    <Content Include="Views\Light\About.cshtml" />
+    <Content Include="Views\Fertilizer\About.cshtml" />
+    <Content Include="Views\Fertilizer\Index.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Hormone\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49277</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49277/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)\.bin\node $(ProjectDir)\Scripts\lib\r.js -o $(ProjectDir)\Scripts\buildHome.js &amp;&amp; $(ProjectDir)\.bin\node $(ProjectDir)\Scripts\lib\r.js -o $(ProjectDir)\Scripts\buildLight.js &amp;&amp; $(ProjectDir)\.bin\node $(ProjectDir)\Scripts\lib\r.js -o $(ProjectDir)\Scripts\buildSoil.js &amp;&amp; $(ProjectDir)\.bin\node $(ProjectDir)\Scripts\lib\r.js -o $(ProjectDir)\Scripts\buildFertilizer.js</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

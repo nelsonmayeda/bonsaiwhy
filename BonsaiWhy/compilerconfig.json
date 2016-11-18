@@ -1,0 +1,150 @@
+﻿[
+  {
+    "outputFile": "Scripts/app/home/menu.es5.js",
+    "inputFile": "Scripts/app/home/menu.js"
+  },
+  {
+    "outputFile": "Scripts/app/home/parallax.es5.js",
+    "inputFile": "Scripts/app/home/parallax.js"
+  },
+  {
+    "outputFile": "Scripts/app/home/rain.es5.js",
+    "inputFile": "Scripts/app/home/rain.js"
+  },
+  {
+    "outputFile": "Scripts/app/home/parallax.es5.js",
+    "inputFile": "Scripts/app/home/parallax.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/bulbdata.es5.js",
+    "inputFile": "Scripts/app/light/bulbdata.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/calculator.es5.js",
+    "inputFile": "Scripts/app/light/calculator.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/chartmaker.es5.js",
+    "inputFile": "Scripts/app/light/chartmaker.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/colormaker.es5.js",
+    "inputFile": "Scripts/app/light/colormaker.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/sundata.es5.js",
+    "inputFile": "Scripts/app/light/sundata.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/ui.es5.js",
+    "inputFile": "Scripts/app/light/ui.js"
+  },
+  {
+    "outputFile": "Scripts/app/soil/calculator.es5.js",
+    "inputFile": "Scripts/app/soil/calculator.js"
+  },
+  {
+    "outputFile": "Scripts/app/soil/colormaker.es5.js",
+    "inputFile": "Scripts/app/soil/colormaker.js"
+  },
+  {
+    "outputFile": "Scripts/app/soil/chartmaker.es5.js",
+    "inputFile": "Scripts/app/soil/chartmaker.js"
+  },
+  {
+    "outputFile": "Scripts/app/soil/ui.es5.js",
+    "inputFile": "Scripts/app/soil/ui.js"
+  },
+  {
+    "outputFile": "Scripts/app/soil/data.es5.js",
+    "inputFile": "Scripts/app/soil/data.js"
+  },
+  {
+    "outputFile": "Scripts/app/home/svg.es5.js",
+    "inputFile": "Scripts/app/home/svg.js"
+  },
+  {
+    "outputFile": "Scripts/app/fertilizer/calculator.es5.js",
+    "inputFile": "Scripts/app/fertilizer/calculator.js"
+  },
+  {
+    "outputFile": "Scripts/app/fertilizer/fertilizerdata.es5.js",
+    "inputFile": "Scripts/app/fertilizer/fertilizerdata.js"
+  },
+  {
+    "outputFile": "Scripts/app/fertilizer/ui.es5.js",
+    "inputFile": "Scripts/app/fertilizer/ui.js"
+  },
+  {
+    "outputFile": "Content/css/Reset.css",
+    "inputFile": "Content/css/Reset.scss"
+  },
+  {
+    "outputFile": "Scripts/app/soil/pottingsoildata.es5.js",
+    "inputFile": "Scripts/app/soil/pottingsoildata.js"
+  },
+  {
+    "outputFile": "Content/css/Light.css",
+    "inputFile": "Content/css/Light.scss"
+  },
+  {
+    "outputFile": "Content/css/Site.css",
+    "inputFile": "Content/css/Site.scss"
+  },
+  {
+    "outputFile": "Content/css/Soil.css",
+    "inputFile": "Content/css/Soil.scss"
+  },
+  {
+    "outputFile": "Content/css/Home-ie.css",
+    "inputFile": "Content/css/Home-ie.scss"
+  },
+  {
+    "outputFile": "Content/css/Home.css",
+    "inputFile": "Content/css/Home.scss"
+  },
+  {
+    "outputFile": "Content/css/Normal.css",
+    "inputFile": "Content/css/Normal.scss"
+  },
+  {
+    "outputFile": "Content/css/Fertilizer.css",
+    "inputFile": "Content/css/Fertilizer.scss"
+  },
+  {
+    "outputFile": "Scripts/app/navbar.es5.js",
+    "inputFile": "Scripts/app/navbar.js"
+  },
+  {
+    "outputFile": "Scripts/app/fertilizer/main.es5.js",
+    "inputFile": "Scripts/app/fertilizer/main.js"
+  },
+  {
+    "outputFile": "Scripts/app/home/main.es5.js",
+    "inputFile": "Scripts/app/home/main.js"
+  },
+  {
+    "outputFile": "Scripts/app/light/main.es5.js",
+    "inputFile": "Scripts/app/light/main.js"
+  },
+  {
+    "outputFile": "Scripts/app/soil/main.es5.js",
+    "inputFile": "Scripts/app/soil/main.js"
+  },
+  {
+    "outputFile": "Scripts/app/home/ui.es5.js",
+    "inputFile": "Scripts/app/home/ui.js"
+  },
+  {
+    "outputFile": "Scripts/lib/molarmass.es5.js",
+    "inputFile": "Scripts/lib/molarmass.js"
+  },
+  {
+    "outputFile": "Scripts/lib/suncalc.es5.js",
+    "inputFile": "Scripts/lib/suncalc.js"
+  },
+  {
+    "outputFile": "Content/css/About.css",
+    "inputFile": "Content/css/About.scss"
+  }
+]

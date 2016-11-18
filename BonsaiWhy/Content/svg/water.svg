@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" id="svg1">
+  <defs>
+    <filter id="gooey-water">
+        <feGaussianBlur in="SourceGraphic"
+                        stdDeviation="20"
+                        result="blur2"></feGaussianBlur>
+        <feColorMatrix in="blur2"
+                       mode="matrix"
+                       values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -5"
+                       result="goo2"></feColorMatrix>
+        <feComposite in="SourceGraphic"
+                     in2="goo2"
+                     operator="atop"></feComposite>
+    </filter>
+</defs>
+    <path class="water-path" style="filter:url(#gooey-water)"
+></path>
+
+</svg>

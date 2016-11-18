@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Fertilizer Calculator";
+    ViewBag.Description = "Calculate fertilizer solution ppm";
+}
+@section css{
+    <link href="/Content/css/Fertilizer.min.css" rel="stylesheet" />
+}
+<h1>Fertilizer Calculator</h1>
+<div>
+    <div class="content">
+        <h2 class="heading">Fertilizer Options</h2>
+        <div id="fertilizer-options"><div class="loading">Loading...</div></div>
+        <div class="table">
+            <div class="row">
+                <label class="cell" for="fertilizer-formula">Formula</label>
+                <div class="cell">
+                    <input type="text" id="fertilizer-formula" name="formula" value="" />
+                </div>
+                <div class="cell">
+                    <button class="submit" id="fertilizer-add">Add</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="heading">Desired Output</h2>
+        <div class="table" id="fertilizer-goals">
+            <div class="row">
+                <h3 class="element cell">Solution</h3>
+                <h3 class="goal cell">Volume</h3>
+                <h3 class="goal cell">Units</h3>
+            </div>
+            <div class="row">
+                <label class="cell" for="volumeInput">Water</label>
+                <div class="cell">
+                    <input type="text" id="volumeInput" name="volume" value="3.79" />
+                </div>
+                <span class="cell">Liters</span>
+            </div>
+            <div class="row">
+                <h3 class="element cell">Element</h3>
+                <h3 class="goal cell">Goal ppm</h3>
+                <h3 class="cell">Output ppm</h3>
+                <h3 class="error cell">Error</h3>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="heading">Calculate</h2>
+        <button class="submit" id="fertilizer-submit">Calculate</button>
+        <div class="table" id="fertilizer-amounts"></div>
+    </div>
+</div>
+@section scripts{
+@*<script src='~/Scripts/lib/molarmass.js'></script>
+<script src='~/Scripts/app/fertilizer/fertilizerdata.js'></script>
+<script src='~/Scripts/app/fertilizer/calculator.js'></script>
+<script src='~/Scripts/app/fertilizer/ui.js'></script>
+<script src='~/Scripts/app/fertilizer/main.js'></script>*@
+ <script data-main="/Scripts/dist/fertilizer/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+
+}

@@ -1,0 +1,321 @@
+﻿input,
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*theme for site*/
+/*blue grey 800 background*/
+/*blue grey 900 content*/
+/*cyan 500 accent*/
+/*normalize for site display*/
+body {
+  background-color: #37474F;
+  color: white;
+  font-family: "Open Sans", sans-serif; }
+
+h1 {
+  font-size: 3.5rem;
+  font-style: italic;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+h2 {
+  font-size: 2rem;
+  font-style: italic;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+h4 {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+img {
+  max-width: 100%; }
+
+a {
+  text-decoration: none;
+  /*anchors not inheritting properly*/
+  color: white;
+  font-family: "Open Sans", sans-serif; }
+
+/*Corresponds to bootstrap sm device size*/
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem; }
+  h2 {
+    font-size: 1.5rem; }
+  h3 {
+    font-size: 1.25rem; }
+  /*note that h4 stays at the same font size*/ }
+
+/*normal for pages*/
+.main {
+  padding: 1em; }
+
+.section {
+  margin-left: 0.5rem; }
+
+.heading {
+  margin-top: 0.3em; }
+
+.content {
+  margin-top: 0.3em;
+  display: block; }
+
+.link {
+  text-decoration: underline; }
+
+.hidden {
+  display: none; }
+
+/*header*/
+.navbar {
+  background: #263238;
+  text-align: center; }
+
+.navbar-header, .navbar-collapse, .navbar-item {
+  display: inline-block; }
+
+.navbar-brand {
+  display: inline-block;
+  font-size: 2rem;
+  font-style: italic;
+  padding: 0.5em;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+.navbar-toggle {
+  margin: 0.5em;
+  font-size: 2rem;
+  display: none; }
+
+.navbar-link {
+  display: block;
+  font-size: 1.5rem;
+  font-style: italic;
+  padding: 0.5em;
+  line-height: normal;
+  /*descenders getting clipped off*/ }
+
+@media (max-width: 768px) {
+  .navbar-header {
+    text-align: left; }
+  .navbar-header, .navbar-collapse, .navbar-item {
+    display: block; }
+  .collapse {
+    display: none; }
+  .navbar-toggle {
+    display: block;
+    float: right;
+    border: solid 0.029em white;
+    padding: 0.264em 0.294em;
+    background-color: transparent;
+    border-radius: 0.118em; }
+  .navbar-toggle .icon-bar {
+    background-color: white;
+    display: block;
+    width: 0.647em;
+    height: 0.059em; }
+  .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 0.118em; } }
+
+/*footer*/
+.footer {
+  background: #263238;
+  text-align: center; }
+
+.footer-section {
+  padding: 1em;
+  display: inline-block; }
+
+.footer-heading {
+  font-weight: bold; }
+
+.footer-item {
+  margin-top: 1em;
+  text-decoration: underline; }
+
+.copyright {
+  padding: 1em;
+  text-align: left; }
+
+.main {
+  padding: 0; }
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 8000; }
+
+.footer {
+  min-height: 50vh; }
+
+.tip {
+  padding: 10px;
+  border-radius: 5px;
+  background: #263238;
+  text-align: center; }
+
+/*Note: cant use display:none on hidden layer tips because won't know when they come back on screen*/
+.tip.hidden {
+  background-color: transparent;
+  color: transparent; }
+
+/*parallax containers*/
+.parallax {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block; }
+
+.filter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+/*parallax layers*/
+.layer {
+  position: absolute; }
+
+#Light {
+  height: 100vh; }
+
+#Soil {
+  height: 50vh; }
+
+#Fertilizer {
+  height: 100vh; }
+
+/*svg sizing*/
+.sun {
+  width: 20vw; }
+
+.lake {
+  width: 100vw; }
+
+.tree {
+  height: 50vh; }
+
+.hill {
+  width: 50vw; }
+
+.cave {
+  width: 60vw; }
+
+.ground {
+  width: 60vw; }
+
+.water {
+  height: 50vh; }
+
+.soil {
+  height: 50vh; }
+
+.roots {
+  width: 75vw; }
+
+.drop {
+  width: 1vh; }
+
+/*svg styling*/
+.sun-path {
+  fill: #00BCD4; }
+
+.lake-path {
+  fill: #00BCD4; }
+
+.tree-leaf-path {
+  fill: #00BCD4; }
+
+.tree-trunk-outline {
+  fill: #263238;
+  stroke: #00BCD4;
+  stroke-width: 10px; }
+
+.tree-trunk-path {
+  fill: #263238; }
+
+.hill-path {
+  fill: #263238; }
+
+.cave-path {
+  fill: #263238; }
+
+.water {
+  fill: #00BCD4; }
+
+.soil {
+  fill: #263238; }
+
+.drop {
+  fill: #00BCD4; }
+
+#firstdrop {
+  display: none; }
+
+/*z-index*/
+.tree {
+  z-index: 9000; }
+
+.tip {
+  z-index: 7000; }
+
+/*Corresponds to bootstrap sm device size*/
+@media (max-width: 767px) {
+  .tree {
+    z-index: 7000; }
+  .tree-leaf-path {
+    stroke: #263238;
+    stroke-width: 5px; }
+  .sun {
+    width: 50vw; } }
+

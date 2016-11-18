@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Light Calculator";
+    ViewBag.Description = "Calculate daily light integral for indoor, outdoor, and artificial light sources";
+}
+@section css{
+    <link href="/Content/css/Light.min.css" rel="stylesheet" />
+}
+<h1>Light Calculator</h1>
+<div>
+    <div>
+        <h2>Location</h2>
+        <div id="location-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div>
+        <h2>Window Direction</h2>
+        <div id="azimuth-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div>
+        <h2>Light Options</h2>
+        <div id="bulb-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div>
+        <h2>Light Distance Away</h2>
+        <div id="distance-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div>
+        <h2>Light Coverage Area</h2>
+        <div id="coverage-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div>
+        <h2>Chart</h2>
+        <div id="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+    </div>
+</div>
+@section scripts{
+@*<script src='~/Scripts/lib/chart.js'></script>
+    <script src='~/Scripts/lib/suncalc.js'></script>
+<script src='~/Scripts/app/light/sundata.js'></script>
+<script src='~/Scripts/app/light/bulbdata.js'></script>
+<script src='~/Scripts/app/light/calculator.js'></script>
+<script src='~/Scripts/app/light/colormaker.js'></script>
+<script src='~/Scripts/app/light/chartmaker.js'></script>
+<script src='~/Scripts/app/light/ui.js'></script>
+<script src='~/Scripts/app/light/main.js'></script>*@
+<script data-main="/Scripts/dist/light/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+    
+}

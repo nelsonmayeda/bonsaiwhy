@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Soil Calculator";
+    ViewBag.Description = "Calculate soil field capacity";
+}
+@section css{
+    <link href="/Content/css/Soil.min.css" rel="stylesheet" />
+}
+<h1 class="heading">Soil Calculator</h1>
+<div>
+    <div id="source">
+        <h2 class="heading">Substrate Options</h2>
+        <div id="substrate-container" class="substrate-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div id="destination">
+        <h2 class="heading">Mixes</h2>
+        <button id="btn-add" class="submit" value="New Mix">New Mix</button>
+        <div id="mixes-container"><div class="loading">Loading...</div></div>
+    </div>
+    <div id="output">
+        <h2 class="heading">Chart</h2>
+        <div id="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+    </div>
+</div>
+@section scripts{
+@*<script src='~/Scripts/lib/chart.js'></script>
+<script src='~/Scripts/app/soil/data.js'></script>
+<script src='~/Scripts/app/soil/pottingsoildata.js'></script>
+<script src='~/Scripts/app/soil/calculator.js'></script>
+<script src='~/Scripts/app/soil/colormaker.js'></script>
+<script src='~/Scripts/app/soil/chartmaker.js'></script>
+<script src='~/Scripts/app/soil/ui.js'></script>
+<script src='~/Scripts/app/soil/main.js'></script>*@
+<script data-main="/Scripts/dist/soil/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+
+}

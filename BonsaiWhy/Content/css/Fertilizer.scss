@@ -1,0 +1,54 @@
+﻿/// <reference path="Site.scss" />
+@import 'Site.scss';
+
+.fertilizer,.submit{
+    display: inline-block;
+    margin: 0.5em 0.5em 0 0;
+    padding: 0.5em 1em;
+    background-color: $secondary-color;
+    color: $font-color;
+    font-size:1rem;
+    text-align: center;
+}
+.fertilizer{
+    border: none;
+}
+.active{
+    border: solid 1px $font-color;
+}
+.checkbox{
+    margin-left:0.5em;
+}
+.cell input{
+    color: $secondary-color;
+    font-weight:bold;
+    text-align:center;
+    width:100%;
+}
+.submit{
+    background-color: $secondary-color;
+}
+label{display:block;}
+.table{
+    display:table;
+  border-spacing: 0.5em;
+    table-layout: fixed;
+}
+.row{
+    display:table-row;
+}
+.cell{
+    display:table-cell;
+}
+
+/*Corresponds to bootstrap sm device size*/
+@media (max-width: 767px)
+{.table{
+table-layout: fixed;
+  width: 100%;
+}
+.row{
+    display:table-row;
+}
+.cell{width:25%;}
+}

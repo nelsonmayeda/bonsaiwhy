@@ -1,0 +1,136 @@
+﻿/// <reference path="Site.scss" />
+@import 'Site.scss';
+.main{
+    padding:0;
+}
+.header{
+    position:fixed;
+    width:100%;
+    z-index:$z-front;
+}
+.footer{
+    min-height:50vh;
+}
+.tip {
+    padding:10px;
+    border-radius: 5px;
+    background: $secondary-color;
+    text-align: center;
+}
+/*Note: cant use display:none on hidden layer tips because won't know when they come back on screen*/
+.tip.hidden{
+    background-color:transparent;
+   color:transparent ;
+}
+/*parallax containers*/
+.parallax {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.filter{
+   position: absolute;
+   top:0;right:0;bottom:0;left:0;
+}
+/*parallax layers*/
+.layer {
+    position: absolute;
+}
+#Light {
+    height: 100vh;
+}
+#Soil {
+    height: 50vh;
+}
+#Fertilizer {
+    height: 100vh;
+}
+/*svg sizing*/
+.sun{
+    width:20vw;
+}
+.lake{
+    width:100vw;
+}
+.tree{
+    height:50vh;
+}
+.hill{
+    width:50vw;
+}
+.cave{
+    width:60vw;
+}
+.ground{
+    width:60vw;
+}
+.water{
+    height: 50vh;
+}
+.soil{
+    height: 50vh;
+}
+.roots{
+    width:75vw;
+}
+.drop{
+    width:1vh;
+}
+/*svg styling*/
+.sun-path{
+    fill: $accent-color;
+}
+.lake-path{
+    fill: $accent-color;
+}
+.tree-leaf-path{
+    fill:$accent-color;
+}
+.tree-trunk-outline{
+    fill:$secondary-color;
+    stroke:$accent-color;
+    stroke-width:10px;
+}
+.tree-trunk-path{
+    fill:$secondary-color;
+}
+.hill-path {
+    fill:$secondary-color;
+}
+.cave-path{
+    fill: $secondary-color;
+}
+.water{
+    fill:$accent-color;
+}
+.soil{
+    fill: $secondary-color;
+}
+.drop{
+    fill:$accent-color;
+}
+#firstdrop{
+    display:none;
+}
+/*z-index*/
+.tree{
+    z-index:$z-modal;
+}
+.tip {
+    z-index:$z-back;
+}
+/*Corresponds to bootstrap sm device size*/
+@media (max-width: 767px)
+{
+    .tree {
+    z-index:$z-back;
+    }
+    .tree-leaf-path{
+        stroke:$secondary-color;
+        stroke-width:5px;
+    }
+    .sun{
+        width:50vw;
+    }
+}
