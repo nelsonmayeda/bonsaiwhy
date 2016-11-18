@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fertilizer Calculator</title>
+    <meta name="description" content="Calculate fertilizer solution ppm">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="/Content/png/graph.png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i" rel="stylesheet">
+    
+    <link href="../../Content/css/Fertilizer.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="body-header" class="header">
+        <nav class="navbar">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="../../">BonsaiWhy</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div><div class="navbar-collapse collapse">
+        <ul class="navbar-nav">
+            <li class="navbar-item" id="nav-light">
+                <a class="navbar-link" href="../../light/">Light Calculator</a>
+            </li><li class="navbar-item" id="nav-soil">
+                <a class="navbar-link" href="../../soil/">Soil Calculator</a>
+            </li><li class="navbar-item" id="nav-fertilizer">
+                <a class="navbar-link" href="../">Fertilizer Calculator</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    </header>
+    <main id="body-main" class="main">
+        
+
+<h1>Fertilizer Calculator</h1>
+<div>
+    <div class="content">
+        <h2 class="heading">Fertilizer Options</h2>
+        <div id="fertilizer-options"><div class="loading">Loading...</div></div>
+        <div class="table">
+            <div class="row">
+                <label class="cell" for="fertilizer-formula">Formula</label>
+                <div class="cell">
+                    <input type="text" id="fertilizer-formula" name="formula" value="">
+                </div>
+                <div class="cell">
+                    <button class="submit" id="fertilizer-add">Add</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="heading">Desired Output</h2>
+        <div class="table" id="fertilizer-goals">
+            <div class="row">
+                <h3 class="element cell">Solution</h3>
+                <h3 class="goal cell">Volume</h3>
+                <h3 class="goal cell">Units</h3>
+            </div>
+            <div class="row">
+                <label class="cell" for="volumeInput">Water</label>
+                <div class="cell">
+                    <input type="text" id="volumeInput" name="volume" value="3.79">
+                </div>
+                <span class="cell">Liters</span>
+            </div>
+            <div class="row">
+                <h3 class="element cell">Element</h3>
+                <h3 class="goal cell">Goal ppm</h3>
+                <h3 class="cell">Output ppm</h3>
+                <h3 class="error cell">Error</h3>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="heading">Calculate</h2>
+        <button class="submit" id="fertilizer-submit">Calculate</button>
+        <div class="table" id="fertilizer-amounts"></div>
+    </div>
+</div>
+
+    </main>
+    <footer id="body-footer" class="footer">
+        <nav class="footer-sites">
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../../">Home</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="../../contact/">contact</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../../about/">about</a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../../light/">Light</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="../../light/calculator/">calculator</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../../light/about/">about</a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../../soil/">Soil</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="../../soil/calculator/">calculator</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../../soil/about/">about</a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-section">
+        <h4 class="footer-heading"><a class="footer-link" href="../">Fertilizer</a></h4>
+        <ul class="footer-content">
+            <li class="footer-item">
+                <a class="footer-link" href="">calculator</a>
+            </li>
+            <li class="footer-item">
+                <a class="footer-link" href="../about/">about</a>
+            </li>
+        </ul>
+    </section>
+</nav>
+<div class="copyright">BonsaiWhy &copy; 2016</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7496598263316713" data-ad-slot="8994102982" data-ad-format="auto">
+        </ins>
+    </footer>
+    <script src="../../Scripts/app/navbar.es5.min.js"></script>
+    
+
+ 
+ <script data-main="/Scripts/dist/fertilizer/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+
+
+    <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-73068722-1', 'auto');
+		ga('send', 'pageview');
+    </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</body>
+</html>
