@@ -105,14 +105,16 @@
         var individual = [];
         var traitsCount = equations[0].length;
         for (var i = 0; i < traitsCount; i++) {
-            var coefficient = 1, coefficientJ = 0;
+            var max = 0;
             equations.forEach(function (equation, j) {
-                if (equation[i] > 0 && equation[i] < coefficient) {
-                    coefficient = equation[i];
-                    coefficientJ = j;
+                if (equation[i] > 0) {
+                    var value = goal[j] / equation[i];
+                    if(value > max){
+                        max = value;
+                    }
                 }
             });
-            individual.push(goal[coefficientJ] / coefficient);
+            individual.push(max);
         }
         return individual;
     };
