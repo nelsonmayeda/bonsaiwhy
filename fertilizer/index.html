@@ -62,9 +62,9 @@
         <h2 class="heading">Desired Output</h2>
         <div class="table" id="fertilizer-goals">
             <div class="row">
-                <h3 class="element cell">Solution</h3>
-                <h3 class="goal cell">Volume</h3>
-                <h3 class="goal cell">Units</h3>
+                <h3 class="cell">Solution</h3>
+                <h3 class="cell">Volume</h3>
+                <h3 class="cell">Units</h3>
             </div>
             <div class="row">
                 <label class="cell" for="volumeInput">Water</label>
@@ -74,10 +74,21 @@
                 <span class="cell">Liters</span>
             </div>
             <div class="row">
-                <h3 class="element cell">Element</h3>
-                <h3 class="goal cell">Goal ppm</h3>
+                <h3 class="cell">Element</h3>
+                <h3 class="cell">Goal ppm</h3>
                 <h3 class="cell">Output ppm</h3>
-                <h3 class="error cell">Error</h3>
+                <h3 class="cell">Error</h3>
+            </div>
+        </div>
+        <div class="table">
+            <div class="row">
+                <label class="cell" for="goal-element">Element</label>
+                <div class="cell">
+                    <input type="text" id="goal-element" name="formula" value="">
+                </div>
+                <div class="cell">
+                    <button class="submit" id="goal-add">Add</button>
+                </div>
             </div>
         </div>
     </div>
@@ -143,7 +154,6 @@
     <script src="../Scripts/app/navbar.es5.min.js"></script>
     
 
- 
  <script data-main="/Scripts/dist/fertilizer/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
 
 
