@@ -14,6 +14,9 @@
             callback.call(scope, array[i], i, array);
         }
     };
+    var addLoading = function addLoading(container) {
+        container.innerHTML = '<div class="loading">Loading...</div>';
+    };
     /*remove isn't supported in older browsers*/
     var removeLoading = function removeLoading(container) {
         var loading = container.querySelector(".loading");
@@ -62,8 +65,11 @@
         var node = document.createElement("div");
         node.className = "row goal";
         var label = document.createElement("label");
-        label.className = "cell element";
+        label.className = "cell element active";
         label.innerHTML = name;
+        label.addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
         var goalppm = document.createElement("div");
         goalppm.className = "cell";
         var inputText = document.createElement("input");
@@ -91,68 +97,97 @@
             container.appendChild(node);
         }
     };
-    var getGoals = function getGoals() {
-        var goals = [];
-        forEach(document.querySelectorAll('.goal .element'), function (element) {
-            goals.push({ name: element.innerHTML });
-        });
-        return goals;
-    };
-    /*pass checked items, goal*/
-    var recalc = function recalc() {
-        var container = document.getElementById("fertilizer-amounts");
-        container.innerHTML = '<div class="loading">Loading...</div>';
-        /*input fertilizer selections*/
+    /*input fertilizer selections*/
+    var getFertilizers = function getFertilizers() {
         var fertilizers = [];
         forEach(document.querySelectorAll('.fertilizer.active'), function (element) {
             var parsed = JSON.parse(element.dataset.fertilizer);
             fertilizers.push(parsed);
         });
-        /*input volume*/
+        return fertilizers;
+    };
+    /*input volume*/
+    var getVolume = function getVolume() {
         var volume = parseFloat(document.getElementById("volumeInput").value);
-        /*input goal ppm*/
-        var goalmass = [];
-        var goals = getGoals();
-        goals.forEach(function (element, index, arr) {
-            var value = parseFloat(document.getElementById("goal" + element.name).value) || 0;
-            arr[index].value = value;
-            goalmass.push(value * volume);
+        return volume;
+    };
+    /*input goal elements*/
+    var getElements = function getElements() {
+        var elements = [];
+        forEach(document.querySelectorAll('.goal .element.active'), function (element) {
+            elements.push({ name: element.innerHTML });
         });
-
-        /*create equations
-        one equation per element: (NPKCaMgS) =6equations
-        each equation.length =fertilizers.length*/
+        return elements;
+    };
+    /*equation coefficients*/
+    var createEquations = function createEquations(elements, fertilizers) {
         var equations = [];
-        goals.forEach(function (element, index) {
+        elements.forEach(function (element, index) {
             var elementEquation = [];
             fertilizers.forEach(function (fertilizer) {
                 elementEquation.push(fertilizer.value.hasOwnProperty(element.name) ? fertilizer.value[element.name] : 0);
             });
             equations.push(elementEquation);
         });
-        /*calculate how much of each fertilizer to use*/
-        var solution = fertilizerCalculator.Calculate(equations, goalmass);
-
-        /*output how much of each fertilizer to use*/
-        solution.forEach(function (amount, fertilizerindex) {
-            var node = createAmount(fertilizers[fertilizerindex].name, Math.round(amount));
-            container.appendChild(node);
+        return equations;
+    };
+    /*equation answers*/
+    var createAnswers = function createAnswers(elements, volume) {
+        var answers = [];
+        elements.forEach(function (element, index, arr) {
+            var value = parseFloat(document.getElementById("goal" + element.name).value) || 0;
+            arr[index].value = value;
+            answers.push(value * volume);
         });
-        /*output goal table - calculatedppm, error */
-        goals.forEach(function (element, index) {
+        return answers;
+    };
+    /*output goal table - calculatedppm, error */
+    var setElements = function setElements(elements, fertilizers, coefficients, volume) {
+        /*clear all*/
+        forEach(document.querySelectorAll('.goal output'), function (output) {
+            output.innerHTML = 0;
+        });
+        /*set some*/
+        elements.forEach(function (element, index) {
             var totalmass = 0;
-            solution.forEach(function (fertilizeramount, fertilizerindex) {
+            coefficients.forEach(function (fertilizeramount, fertilizerindex) {
                 totalmass += fertilizeramount * (fertilizers[fertilizerindex].value.hasOwnProperty(element.name) ? fertilizers[fertilizerindex].value[element.name] : 0);
             });
             var totalppm = totalmass / volume;
             document.getElementById("output" + element.name).innerHTML = Math.round(totalppm);
             document.getElementById("error" + element.name).innerHTML = Math.round(totalppm - element.value);
         });
+    };
+    /*output total of each fertilizer to use*/
+    var setTotals = function setTotals(fertilizers, coefficients) {
+        var container = document.getElementById("fertilizer-amounts");
+        coefficients.forEach(function (amount, fertilizerindex) {
+            var node = createAmount(fertilizers[fertilizerindex].name, Math.round(amount));
+            container.appendChild(node);
+        });
+    };
+    /*pass checked items, goal*/
+    var recalc = function recalc() {
+        var container = document.getElementById("fertilizer-amounts");
+        addLoading(container);
+
+        var fertilizers = getFertilizers();
+        var volume = getVolume();
+        var elements = getElements();
+
+        var equations = createEquations(elements, fertilizers);
+        var answers = createAnswers(elements, volume);
+
+        /*calculate how much of each fertilizer to use*/
+        var coefficients = fertilizerCalculator.Calculate(equations, answers);
+
+        setElements(elements, fertilizers, coefficients, volume);
+        setTotals(fertilizers, coefficients);
+
         removeLoading(container);
     };
     var submitEverything = function submitEverything() {
-        var container = document.getElementById("fertilizer-amounts");
-        container.innerHTML = '<div class="loading">Loading...</div>';
+        addLoading(document.getElementById("fertilizer-amounts"));
         setTimeout(recalc, 100);
     };
     var uiInit = function uiInit() {
@@ -168,10 +203,13 @@
             var node = createGoal(element.name, element.value);
             goalcontainer.appendChild(node);
         });
+
         var fertilizeradd = document.getElementById("fertilizer-add");
         fertilizeradd.addEventListener("click", addOption);
+
         var goaladd = document.getElementById("goal-add");
         goaladd.addEventListener("click", addGoal);
+
         var submit = document.getElementById("fertilizer-submit");
         submit.addEventListener("click", submitEverything);
     };
