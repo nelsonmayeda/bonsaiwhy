@@ -425,6 +425,7 @@
     <Content Include="Scripts\dist\fertilizer\main.js" />
     <Content Include="Scripts\dist\home\main.js" />
     <Content Include="Scripts\dist\light\main.js" />
+    <Content Include="Scripts\dist\shared\navbar.js" />
     <Content Include="Scripts\dist\soil\main.js" />
     <Content Include="Scripts\lib\Chart.js" />
     <Content Include="Scripts\lib\Chart.min.js" />

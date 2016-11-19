@@ -23,14 +23,14 @@
         container.removeChild(loading);
     };
     /*create html: calculated amounts*/
-    var createAmount = function createAmount(name, value) {
+    var createAmount = function createAmount(name, value, unit) {
         var node = document.createElement("div");
         node.className = "row";
         var description = document.createElement("span");
         description.innerHTML = name + ": ";
         description.className = "cell";
         var amount = document.createElement("span");
-        amount.innerHTML = value.toLocaleString() + "mg";
+        amount.innerHTML = value.toLocaleString() + unit;
         amount.className = "cell";
         node.appendChild(description);
         node.appendChild(amount);
@@ -161,10 +161,21 @@
     /*output total of each fertilizer to use*/
     var setTotals = function setTotals(fertilizers, coefficients) {
         var container = document.getElementById("fertilizer-amounts");
+        /*total weights of each fertilizer*/
         coefficients.forEach(function (amount, fertilizerindex) {
-            var node = createAmount(fertilizers[fertilizerindex].name, Math.round(amount));
+            var node = createAmount(fertilizers[fertilizerindex].name, Math.round(amount), "mg");
             container.appendChild(node);
         });
+    };
+    /*total ppm*/
+    var setPPM = function setPPM(fertilizers, coefficients, volume) {
+        var container = document.getElementById("fertilizer-amounts");
+        var total = 0;
+        coefficients.forEach(function (amount, fertilizerindex) {
+            total += amount;
+        });
+        var ppm = createAmount("Total PPM", Math.round(total / volume), "ppm");
+        container.appendChild(ppm);
     };
     /*pass checked items, goal*/
     var recalc = function recalc() {
@@ -183,6 +194,7 @@
 
         setElements(elements, fertilizers, coefficients, volume);
         setTotals(fertilizers, coefficients);
+        setPPM(fertilizers, coefficients, volume);
 
         removeLoading(container);
     };
