@@ -21,12 +21,6 @@
     }, {
         name: "Potassium Phosphate",
         formula: "KH2PO4"
-    }, {
-        name: "Potassium Sulfate",
-        formula: "K2SO4"
-    }, {
-        name: "Ammonium Phosphate",
-        formula: "(NH4)2HPO4"
     }];
 });
 

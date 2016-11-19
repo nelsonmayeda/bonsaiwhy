@@ -17,6 +17,20 @@
         var loading = container.querySelector(".loading");
         container.removeChild(loading);
     };
+    /*create html: calculated amounts*/
+    var createAmount = function (name, value) {
+        var node = document.createElement("div");
+        node.className = "row";
+        var description = document.createElement("span");
+        description.innerHTML = name + ": ";
+        description.className = "cell";
+        var amount = document.createElement("span");
+        amount.innerHTML = value.toLocaleString() + "mg";
+        amount.className = "cell";
+        node.appendChild(description);
+        node.appendChild(amount);
+        return node;
+    };
     /*create html: fertilizer options with click handler*/
     var createOption = function (name, formula) {
         var data = { name: "", value: "" };
@@ -32,17 +46,19 @@
         return node;
     };
     var addOption = function () {
-        var optioncontainer = document.getElementById("fertilizer-options");
+        var container = document.getElementById("fertilizer-options");
         var formula = document.getElementById("fertilizer-formula").value;
-        var node = createOption(formula, formula);
-        optioncontainer.appendChild(node);
+        if(formula){
+            var node = createOption(formula, formula);
+            container.appendChild(node);
+        }
     };
     /*create html: fertilizer goals with textboxes*/
     var createGoal = function (name, value) {
         var node = document.createElement("div");
-        node.className = "row";
+        node.className = "row goal";
         var label = document.createElement("label");
-        label.className = "cell";
+        label.className = "cell element";
         label.innerHTML = name;
         var goalppm = document.createElement("div");
         goalppm.className = "cell";
@@ -63,29 +79,21 @@
         node.appendChild(outputerror);
         return node;
     };
-    /*create html: calculated amounts*/
-    var createAmount = function (name, value) {
-        var node = document.createElement("div");
-        node.className = "row";
-        var description = document.createElement("span");
-        description.innerHTML = name + ": ";
-        description.className = "cell";
-        var amount = document.createElement("span");
-        amount.innerHTML = value.toLocaleString() + "mg";
-        amount.className = "cell";
-        node.appendChild(description);
-        node.appendChild(amount);
-        return node;
+    var addGoal = function () {
+        var container = document.getElementById("fertilizer-goals");
+        var formula = document.getElementById("goal-element").value;
+        if (formula) {
+            var node = createGoal(formula, 0);
+            container.appendChild(node);
+        }
     };
-    var goals=[
-        { name: "N",value:211},
-        { name: "P", value: 46 },
-        { name: "K", value: 263 },
-        { name: "Ca", value: 132 },
-        { name: "Mg", value: 20 },
-        { name: "S", value: 13 }
-
-    ];
+    var getGoals = function () {
+        var goals = [];
+        forEach(document.querySelectorAll('.goal .element'), function (element) {
+            goals.push({name:element.innerHTML});
+        });
+        return goals;
+    };
     /*pass checked items, goal*/
     var recalc = function () {
         var container = document.getElementById("fertilizer-amounts");
@@ -100,8 +108,9 @@
         var volume = parseFloat(document.getElementById("volumeInput").value);
         /*input goal ppm*/
         var goalmass = [];
+        var goals = getGoals();
         goals.forEach(function (element, index, arr) {
-            var value = parseFloat(document.getElementById("goal" + element.name).value);
+            var value = parseFloat(document.getElementById("goal" + element.name).value) ||0;
             arr[index].value = value;
             goalmass.push( value * volume);
         });
@@ -150,12 +159,22 @@
         });
         removeLoading(optioncontainer);
         var goalcontainer = document.getElementById("fertilizer-goals");
+        var goals = [
+            { name: "N", value: 211 },
+            { name: "P", value: 46 },
+            { name: "K", value: 263 },
+            { name: "Ca", value: 132 },
+            { name: "Mg", value: 20 },
+            { name: "S", value: 13 }
+        ];
         goals.forEach(function (element) {
             var node = createGoal(element.name, element.value);
             goalcontainer.appendChild(node);
         });
-        var add = document.getElementById("fertilizer-add");
-        add.addEventListener("click", addOption);
+        var fertilizeradd = document.getElementById("fertilizer-add");
+        fertilizeradd.addEventListener("click", addOption);
+        var goaladd = document.getElementById("goal-add");
+        goaladd.addEventListener("click", addGoal);
         var submit = document.getElementById("fertilizer-submit");
         submit.addEventListener("click", submitEverything);
     };
