@@ -35,10 +35,8 @@
         return node;
     };
     /*create html: fertilizer options with click handler*/
-    var createOption = function (name, formula) {
-        var data = { name: "", value: "" };
-        data.name = name;
-        data.value = molarMass.Calculate(formula);
+    var createOption = function (name, value) {
+        var data = { name: name, value: value };
         var node = document.createElement("button");
         node.className = "fertilizer active";
         node.innerHTML = name;
@@ -48,11 +46,21 @@
         node.addEventListener("click", function () { this.classList.toggle("active"); });
         return node;
     };
-    var addOption = function () {
+    var addFertilizer = function () {
         var container = document.getElementById("fertilizer-options");
         var formula = document.getElementById("fertilizer-formula").value;
-        if(formula){
-            var node = createOption(formula, formula);
+        if (formula) {
+            var mm = molarMass.CalculateMM(formula);
+            var node = createOption(formula, mm);
+            container.appendChild(node);
+        }
+    };
+    var addNPK = function () {
+        var container = document.getElementById("fertilizer-options");
+        var formula = document.getElementById("npk-formula").value;
+        if (formula) {
+            var npk = molarMass.CalculateNPK(formula);
+            var node = createOption(formula, npk);
             container.appendChild(node);
         }
     };
@@ -196,13 +204,16 @@
         addLoading(document.getElementById("fertilizer-amounts"));
         setTimeout(recalc, 100);
     };
-    var uiInit = function () {
+    var initOptions = function () {
         var optioncontainer = document.getElementById("fertilizer-options");
         fertilizerData.forEach(function (fertilizer) {
-            var node = createOption(fertilizer.name, fertilizer.formula);
+            var mm = molarMass.CalculateMM(fertilizer.formula);
+            var node = createOption(fertilizer.name, mm);
             optioncontainer.appendChild(node);
         });
         removeLoading(optioncontainer);
+    };
+    var initGoals = function () {
         var goalcontainer = document.getElementById("fertilizer-goals");
         var goals = [
             { name: "N", value: 211 },
@@ -216,15 +227,48 @@
             var node = createGoal(element.name, element.value);
             goalcontainer.appendChild(node);
         });
+    };
+    var initButtons = function () {
+        document.getElementById("fertilizer-add")
+        .addEventListener("click", addFertilizer);
 
-        var fertilizeradd = document.getElementById("fertilizer-add");
-        fertilizeradd.addEventListener("click", addOption);
+        document.getElementById("fertilizer-formula")
+        .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode == 13) {
+                addFertilizer();
+            }
+        });
 
-        var goaladd = document.getElementById("goal-add");
-        goaladd.addEventListener("click", addGoal);
+        document.getElementById("npk-add")
+        .addEventListener("click", addNPK);
 
-        var submit = document.getElementById("fertilizer-submit");
-        submit.addEventListener("click", submitEverything);
+        document.getElementById("npk-formula")
+        .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode == 13) {
+                addNPK();
+            }
+        });
+
+        document.getElementById("goal-add")
+        .addEventListener("click", addGoal);
+
+        document.getElementById("goal-element")
+        .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode == 13) {
+                addGoal();
+            }
+        });
+
+        document.getElementById("fertilizer-submit")
+        .addEventListener("click", submitEverything);
+    };
+    var uiInit = function () {
+        initOptions();
+        initGoals();
+        initButtons();
     };
     return {
         Init: uiInit

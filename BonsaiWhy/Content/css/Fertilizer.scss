@@ -13,7 +13,7 @@
 .fertilizer{
     border: none;
 }
-.active{
+button.active, label.active{
     border: solid 1px $font-color;
 }
 .checkbox{

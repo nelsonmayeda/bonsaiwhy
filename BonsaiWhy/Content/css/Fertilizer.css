@@ -166,6 +166,10 @@ a {
   .navbar-toggle .icon-bar + .icon-bar {
     margin-top: 0.118em; } }
 
+@media (min-width: 769px) {
+  .navbar-item.active {
+    background: radial-gradient(rgba(255, 255, 255, 0.5), #263238 50%); } }
+
 /*footer*/
 .footer {
   background: #263238;
@@ -179,8 +183,7 @@ a {
   font-weight: bold; }
 
 .footer-item {
-  margin-top: 1em;
-  text-decoration: underline; }
+  margin-top: 1em; }
 
 .copyright {
   padding: 1em;
@@ -198,7 +201,7 @@ a {
 .fertilizer {
   border: none; }
 
-.active {
+button.active, label.active {
   border: solid 1px white; }
 
 .checkbox {

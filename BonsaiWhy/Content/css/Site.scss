@@ -76,6 +76,11 @@
 	}
 }
 
+@media (min-width: 769px) {
+    .navbar-item.active{
+        background: radial-gradient(rgba($font-color,0.5),$secondary-color 50%);
+    }
+}
 /*footer*/
 .footer{
    background:$secondary-color;
@@ -90,7 +95,6 @@
 }
 .footer-item{
     margin-top:1em;
-    text-decoration:underline;
 }
 .copyright{
     padding:1em;

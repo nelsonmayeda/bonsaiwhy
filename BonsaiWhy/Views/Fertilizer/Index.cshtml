@@ -12,12 +12,21 @@
         <div id="fertilizer-options"><div class="loading">Loading...</div></div>
         <div class="table">
             <div class="row">
-                <label class="cell" for="fertilizer-formula">Formula</label>
+                <label class="cell" for="fertilizer-formula">Elemental Formula</label>
                 <div class="cell">
-                    <input type="text" id="fertilizer-formula" name="formula" value="" />
+                    <input type="text" id="fertilizer-formula" name="elemental-formula" placeholder="ex. MgSO4(H2O)7" value="" />
                 </div>
                 <div class="cell">
                     <button class="submit" id="fertilizer-add">Add</button></div>
+            </div>
+            <div class="row">
+                <label class="cell" for="npk-formula">NPK Formula</label>
+                <div class="cell">
+                    <input type="text" id="npk-formula" name="npk-formula" placeholder="ex. N24P8K16" value="" />
+                </div>
+                <div class="cell">
+                    <button class="submit" id="npk-add">Add</button>
+                </div>
             </div>
         </div>
     </div>
@@ -47,7 +56,7 @@
             <div class="row">
                 <label class="cell" for="goal-element">Element</label>
                 <div class="cell">
-                    <input type="text" id="goal-element" name="formula" value="" />
+                    <input type="text" id="goal-element" name="formula" placeholder="ex. Fe" value="" />
                 </div>
                 <div class="cell">
                     <button class="submit" id="goal-add">Add</button>
@@ -63,10 +72,10 @@
 </div>
 @section scripts{
 @*<script src='~/Scripts/lib/molarmass.js'></script>
-<script src='~/Scripts/app/fertilizer/fertilizerdata.js'></script>
-<script src='~/Scripts/app/fertilizer/calculator.js'></script>
-<script src='~/Scripts/app/fertilizer/ui.js'></script>
-<script src='~/Scripts/app/fertilizer/main.js'></script>*@
-<script data-main="/Scripts/dist/fertilizer/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+    <script src='~/Scripts/app/fertilizer/fertilizerdata.js'></script>
+    <script src='~/Scripts/app/fertilizer/calculator.js'></script>
+    <script src='~/Scripts/app/fertilizer/ui.js'></script>
+    <script src='~/Scripts/app/fertilizer/main.js'></script>*@
+    <script data-main="/Scripts/dist/fertilizer/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
 
 }
