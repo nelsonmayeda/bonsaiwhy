@@ -20,7 +20,7 @@
     <header id="body-header" class="header">
         <nav class="navbar">
     <div class="navbar-header">
-        <a class="navbar-brand navbar-item " href="../../">BonsaiWhy</a>
+        <a class="navbar-brand " href="../../">BonsaiWhy</a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -50,10 +50,22 @@
             <div class="section">
                 <h3 class="heading">Light units</h3>
                 <div>
-                    <p class="content">Lumens is the total light that a source produces in all directions.</p>
-                    <p class="content">Lux is the Lumens that falls onto a destination area.</p>
+                    <p class="content">Lumens is the total light that a bulb produces in all directions.</p>
+                    <p class="content">Lux is the Lumens that fall onto a particular area.</p>
                     <p class="content">PAR is the Lux measured between wavelengths 400-700nm ( blue-red spectrum most used by plants).</p>
                     <p class="content">Daily light integral is PAR integrated over the course of a day.</p>
+                </div>
+            </div>
+            <div class="section">
+                <h3 class="heading">Sidenotes</h3>
+                <div>
+                    <p class="content">These are simplified definitions.</p>
+                    <p class="content">Lumens is a weighted function centered around 550nm (green spectrum most visible by humans). Phone apps estimate this value using camera exposure (aperature and shutter speed).</p>
+                    <p class="content">PAR is evenly weighted across 400-700nm ( violet-red ). Newer PAR meters no longer cut off below 450nm or above 650nm.</p>
+                    <p class="content">However due to these wavelength differences any conversion between Lux and PAR can be off by orders of magnitude.</p>
+                    <p class="content">Sunlight is distributed evenly and the conversion is consistent. PAR = Lux*0.0185</p>
+                    <p class="content">Fluorescent lights have spikes at multiple wavelengths and the conversion is inconsistent: PAR = Lux*0.0135</p>
+                    <p class="content">LEDs are highly dependent on color and have the most inconsistent conversions. Blue LED: PAR = Lux*0.0222</p>
                 </div>
             </div>
             <div class="section">
@@ -115,6 +127,12 @@
                             <p class="content">Rhododendron indicum (Azalea)</p>
                         </div>
                     </div>
+                    <div class="section">
+                        <h4 class="heading">Dappled sun: 10-20 DLI</h4>
+                        <div>
+                            <p class="content">Certain trees like Ficus will thrive above 30 DLI and lose leaves to survive below 20. Just because a tree is alive doesn't mean it's healthy.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,20 +141,11 @@
         <h2 class="heading">Calculator</h2>
         <div>
             <div class="section">
-                <h3 class="heading">About</h3>
-                <div>
-                    <p class="content">Bonsai is traditionally an outdoor hobby.</p>
-                    <p class="content">Direct sunlight provides much more light than a windowsill or indoor lighting. More light creates denser growth.</p>
-                    <p class="content">But what if outdoors isn't an option? How does a south-facing window or grow light compare?</p>
-                    <p class="content">Light calculator compares daily light integral of indoor sunlight, outdoor sunlight, and various artificial lights.</p>
-                </div>
-            </div>
-            <div class="section">
                 <h3 class="heading">Method</h3>
                 <div>
                     <p class="content">Sun calculations use sun angle (altitude and azimuth), sun intensity, and atmosphere conditions.</p>
                     <p class="content">Indoor calculations take into account window angle and building obstruction.</p>
-                    <p class="content">Bulb calculations assume 18 hours/day at a constant level.</p>
+                    <p class="content">Bulb calculations assume 18 hours/day at a constant level. PAR measurements done with a full spectrum meter.</p>
                 </div>
             </div>
             <div class="section">
@@ -148,7 +157,6 @@
             </div>
         </div>
     </div>
-
     <div class="section">
         <h2 class="heading">References</h2>
         <div>
@@ -162,121 +170,177 @@
                 </div>
             </div>
             <div class="section">
-                <h3 class="heading">Sun Angle</h3>
+                <h3 class="heading">Background Information</h3>
                 <div>
-                    <div>
-                        <p class="content">Sun angle provided by the SunCalc.net project</p>
-                        <a class="content link" href="https://github.com/mourner/suncalc">https://github.com/mourner/suncalc</a>
+                    <div class="section">
+                        <h4 class="heading">Light Units</h4>
+                        <div>
+                            <div>
+                                <p class="content">Lux</p>
+                                <a class="content link" href="http://physics.nist.gov/cuu/Units/units.html">http://physics.nist.gov/cuu/Units/units.html</a>
+                            </div>
+                            <div>
+                                <p class="content">PAR</p>
+                                <a class="content link" href="http://www.apogeeinstruments.com/conversion-ppf-to-lux/">http://www.apogeeinstruments.com/conversion-ppf-to-lux/</a>
+                            </div>
+                            <div>
+                                <p class="content">DLI</p>
+                                <a class="content link" href="http://www.apogeeinstruments.com/conversion-instantaneous-ppf-to-integrated-ppf/">http://www.apogeeinstruments.com/conversion-instantaneous-ppf-to-integrated-ppf/</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p class="content">Tested against US Navy Observatory azimuth and altitude calculator</p>
-                        <a class="content link" href="http://aa.usno.navy.mil/data/docs/AltAz.php">http://aa.usno.navy.mil/data/docs/AltAz.php</a>
+                    <div class="section">
+                        <h4 class="heading">Sidenotes</h4>
+                        <div>
+                            <div>
+                                <p class="content">Lumen</p>
+                                <a class="content link" href="http://physics.nist.gov/cuu/Units/candela.html">http://physics.nist.gov/cuu/Units/candela.html</a>
+                            </div>
+                            <div>
+                                <p class="content">Riddle, Dana (February 2013). "Aquarium Equipment: PAR Meters and LEDs - How Accurate are the Measurements? A Comparison of Three Meters and Lux to PAR Conversion Factors for LEDs". Advanced Aquarist.</p>
+                                <a class="content link" href="http://www.advancedaquarist.com/2013/2/equipment">http://www.advancedaquarist.com/2013/2/equipment</a>
+                            </div>
+                            <div>
+                                <p class="content">PAR Spectrum Response</p>
+                                <a class="content link" href="http://www.apogeeinstruments.com/apogee-instruments-quantum-sensor-technical-information/">http://www.apogeeinstruments.com/apogee-instruments-quantum-sensor-technical-information/</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h4 class="heading">Light Levels</h4>
+                        <div>
+                            <div>
+                                <p class="content">Light levels for growing orchids</p>
+                                <a class="content link" href="http://www.orchidsusa.com/3Lightlevels.htm">http://www.orchidsusa.com/3Lightlevels.htm</a>
+                            </div>
+                            <div>
+                                <p class="content">Sun, Partial Sun / Partial Shade, Dappled Sun, Full Shade</p>
+                                <a class="content link" href="http://gardeningwithconfidence.com/blog/2013/04/25/sun-part-sun-shade-part-shade/">http://gardeningwithconfidence.com/blog/2013/04/25/sun-part-sun-shade-part-shade/</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h4 class="heading">Species Info</h4>
+                        <div>
+                            <div>
+                                <p class="content">Torres, Ariana P.;Lopez, Roberto G. (2010). "Measuring Daily Light Integral in a Greenhouse". Purdue Extension,HO-238-W,pp.5-7</p>
+                                <a class="content link" href="https://www.extension.purdue.edu/extmedia/ho/ho-238-w.pdf">https://www.extension.purdue.edu/extmedia/ho/ho-238-w.pdf</a>
+                            </div>
+                            <div>
+                                <p class="content">Evergreen Tree Species Guide</p>
+                                <p class="content">Ford, John; Ticknor, Robert L. (1983). "Evergreen Trees and how to use them in your garden". Golden Press,pp.60-62</p>
+                            </div>
+                            <div>
+                                <p class="content">Bonsai Empire tree species guide</p>
+                                <a class="content link" href="http://www.bonsaiempire.com/tree-species">http://www.bonsaiempire.com/tree-species</a>
+                            </div>
+                            <div>
+                                <p class="content">bonsai4me tree species guide</p>
+                                <a class="content link" href="http://www.bonsai4me.com/species_guide.html">http://www.bonsai4me.com/species_guide.html</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="section">
-                <h3 class="heading">Sun Intensity</h3>
+                <h3 class="heading">Calculator</h3>
                 <div>
-                    <div>
-                        <p class="content">Hourly sun intensity data from the National Solar Radiation Database provided by National Renewable Energy Laboratory</p>
-                        <a class="content link" href="http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/hourly/">http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/hourly/</a>
+                    <div class="section">
+                        <h4 class="heading">Sun Angle</h4>
+                        <div>
+                            <div>
+                                <p class="content">Sun angle provided by the SunCalc.net project</p>
+                                <a class="content link" href="https://github.com/mourner/suncalc">https://github.com/mourner/suncalc</a>
+                            </div>
+                            <div>
+                                <p class="content">Tested against US Navy Observatory azimuth and altitude calculator</p>
+                                <a class="content link" href="http://aa.usno.navy.mil/data/docs/AltAz.php">http://aa.usno.navy.mil/data/docs/AltAz.php</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section">
-                <h3 class="heading">Amosphere conditions</h3>
-                <div>
-                    <div>
-                        <p class="content">Daily weather condition data from the National Solar Radiation Database provided by National Renewable Energy Laboratory</p>
-                        <a class="content link" href="http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/dsf/">http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/dsf/</a>
+                    <div class="section">
+                        <h4 class="heading">Sun Intensity</h4>
+                        <div>
+                            <div>
+                                <p class="content">Hourly sun intensity data from the National Solar Radiation Database provided by National Renewable Energy Laboratory</p>
+                                <a class="content link" href="http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/hourly/">http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/hourly/</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section">
-                <h3 class="heading">Losses due to atmosphere scattering</h3>
-                <div>
-                    <div>
-                        <p class="content">Losses calculated with equations and coefficients from Perez et al.</p>
-                        <p class="content">Perez,R.; Ineichen,P.; Seals,R.; Michalsky,J.; Stewart,R. (1990). "Modeling Daylight Availability and Irradiance Components from Direct and Global Irradiance".Solar Energy,44(5),pp.271-289.</p>
-                        <a class="content link" href="http://www.physics.arizona.edu/~cronin/Solar/References/Shade%20effects/sdarticle%20(24).pdf">http://www.physics.arizona.edu/~cronin/Solar/References/Shade%20effects/sdarticle%20(24).pdf</a>
+                    <div class="section">
+                        <h4 class="heading">Amosphere conditions</h4>
+                        <div>
+                            <div>
+                                <p class="content">Daily weather condition data from the National Solar Radiation Database provided by National Renewable Energy Laboratory</p>
+                                <a class="content link" href="http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/dsf/">http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/dsf/</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section">
-                <h3 class="heading">Incidence angle equation</h3>
-                <div>
-                    <div>
-                        <p class="content">Light angles calculated with 3D incidence angle equation from PVWatts Version 1 Technical Reference (2013) published by the National Renewable Energy Laboratory.</p>
-                        <a class="content link" href="http://www.nrel.gov/docs/fy14osti/60272.pdf">http://www.nrel.gov/docs/fy14osti/60272.pdf</a>
+                    <div class="section">
+                        <h4 class="heading">Losses due to atmosphere scattering</h4>
+                        <div>
+                            <div>
+                                <p class="content">Losses calculated with equations and coefficients from Perez et al.</p>
+                                <p class="content">Perez,R.; Ineichen,P.; Seals,R.; Michalsky,J.; Stewart,R. (1990). "Modeling Daylight Availability and Irradiance Components from Direct and Global Irradiance".Solar Energy,44(5),pp.271-289.</p>
+                                <a class="content link" href="http://www.physics.arizona.edu/~cronin/Solar/References/Shade%20effects/sdarticle%20(24).pdf">http://www.physics.arizona.edu/~cronin/Solar/References/Shade%20effects/sdarticle%20(24).pdf</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p class="content">Tested against incidence angle from National Renewable Energy Laboratory's Measurement and Instrumentation Data Center Solar Position Calculator.</p>
-                        <a class="content link" href="https://www.nrel.gov/midc/solpos/spa.html">https://www.nrel.gov/midc/solpos/spa.html</a>
+                    <div class="section">
+                        <h4 class="heading">Incidence angle equation</h4>
+                        <div>
+                            <div>
+                                <p class="content">Light angles calculated with 3D incidence angle equation from PVWatts Version 1 Technical Reference (2013) published by the National Renewable Energy Laboratory.</p>
+                                <a class="content link" href="http://www.nrel.gov/docs/fy14osti/60272.pdf">http://www.nrel.gov/docs/fy14osti/60272.pdf</a>
+                            </div>
+                            <div>
+                                <p class="content">Tested against incidence angle from National Renewable Energy Laboratory's Measurement and Instrumentation Data Center Solar Position Calculator.</p>
+                                <a class="content link" href="https://www.nrel.gov/midc/solpos/spa.html">https://www.nrel.gov/midc/solpos/spa.html</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section">
-                <h3 class="heading">Direct beam radiation, sky radiation, and ground reflected radiation</h3>
-                <div>
-                    <div>
-                        <p class="content">Calculations follow the outline provided by Solar Radiation Data Manual for Buildings</p>
-                        <a class="content link" href="http://rredc.nrel.gov/solar/pubs/bluebook/appendix.html">http://rredc.nrel.gov/solar/pubs/bluebook/appendix.html</a>
+                    <div class="section">
+                        <h4 class="heading">Direct beam radiation, sky radiation, and ground reflected radiation</h4>
+                        <div>
+                            <div>
+                                <p class="content">Calculations follow the outline provided by Solar Radiation Data Manual for Buildings</p>
+                                <a class="content link" href="http://rredc.nrel.gov/solar/pubs/bluebook/appendix.html">http://rredc.nrel.gov/solar/pubs/bluebook/appendix.html</a>
+                            </div>
+                            <div>
+                                <p class="content">Tested against Monthly Solar Radiation and Illuminance for North, South, East, West, and Horizontal surfaces.</p>
+                                <a class="content link" href="http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/bluebook/state.html">http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/bluebook/state.html</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p class="content">Tested against Monthly Solar Radiation and Illuminance for North, South, East, West, and Horizontal surfaces.</p>
-                        <a class="content link" href="http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/bluebook/state.html">http://rredc.nrel.gov/solar/old_data/nsrdb/1961-1990/bluebook/state.html</a>
-                    </div>
-                </div>
-            </div>
-            <div class="section">
-                <h3 class="heading">Tree Species Guides</h3>
-                <div>
-                    <div>
-                        <p class="content">Greenhouse species guide</p>
-                        <p class="content">Torres, Ariana P.;Lopez, Roberto G. (2010). "Measuring Daily Light Integral in a Greenhouse". Purdue Extension,HO-238-W,pp.5-7</p>
-                        <a class="content link" href="https://www.extension.purdue.edu/extmedia/ho/ho-238-w.pdf">https://www.extension.purdue.edu/extmedia/ho/ho-238-w.pdf</a>
-                    </div>
-                    <div>
-                        <p class="content">Evergreen Tree Species Guide</p>
-                        <p class="content">Ford, John; Ticknor, Robert L. (1983). "Evergreen Trees and how to use them in your garden". Golden Press,pp.60-62</p>
-                    </div>
-                    <div>
-                        <p class="content">Bonsai Empire tree species guide</p>
-                        <a class="content link" href="http://www.bonsaiempire.com/tree-species">http://www.bonsaiempire.com/tree-species</a>
-                    </div>
-                    <div>
-                        <p class="content">bonsai4me tree species guide</p>
-                        <a class="content link" href="http://www.bonsai4me.com/species_guide.html">http://www.bonsai4me.com/species_guide.html</a>
-                    </div>
-                </div>
-            </div>
-            <div class="section">
-                <h3 class="heading">Artificial light data</h3>
-                <p class="content">Measurements taken with an Apogee handheld PAR meter.</p>
-                <div>
-                    <p class="content">PAR testing procedure explained.</p>
-                    <a class="content link" href="https://www.youtube.com/watch?v=F-8OY0QBgrs">https://www.youtube.com/watch?v=F-8OY0QBgrs</a>
-                </div>
-                <div>
-                    <div>
-                        <p class="content">90W LED</p>
-                        <a class="content link" href="http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/">http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/</a>
-                    </div>
-                    <div>
-                        <p class="content">200W LED</p>
-                        <a class="content link" href="http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/">http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/</a>
-                    </div>
-                    <div>
-                        <p class="content">325W LED</p>
-                        <a class="content link" href="http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/">http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/</a>
-                    </div>
-                    <div>
-                        <p class="content">650W LED</p>
-                        <a class="content link" href="http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/">http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/</a>
-                    </div>
-                    <div>
-                        <p class="content">800W LED</p>
-                        <a class="content link" href="http://growershouse.com/blog/california-light-works-solar-storm-800w-led-grow-light-par-and-footprint-review/">http://growershouse.com/blog/california-light-works-solar-storm-800w-led-grow-light-par-and-footprint-review/</a>
+                    <div class="section">
+                        <h4 class="heading">Artificial light data</h4>
+                        <p class="content">Measurements taken with an Apogee handheld PAR meter.</p>
+                        <div>
+                            <p class="content">PAR testing procedure explained.</p>
+                            <a class="content link" href="https://www.youtube.com/watch?v=F-8OY0QBgrs">https://www.youtube.com/watch?v=F-8OY0QBgrs</a>
+                        </div>
+                        <div>
+                            <div>
+                                <p class="content">90W LED</p>
+                                <a class="content link" href="http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/">http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/</a>
+                            </div>
+                            <div>
+                                <p class="content">200W LED</p>
+                                <a class="content link" href="http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/">http://growershouse.com/blog/led-grow-light-comparison-test-review-kessil-v-prosource-v-california-light-works-v-haight-solid-state/</a>
+                            </div>
+                            <div>
+                                <p class="content">325W LED</p>
+                                <a class="content link" href="http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/">http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/</a>
+                            </div>
+                            <div>
+                                <p class="content">650W LED</p>
+                                <a class="content link" href="http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/">http://growershouse.com/blog/lumigrow-pro-series-325-650-greenhouse-led-plant-grow-lights-review-and-par-test/</a>
+                            </div>
+                            <div>
+                                <p class="content">800W LED</p>
+                                <a class="content link" href="http://growershouse.com/blog/california-light-works-solar-storm-800w-led-grow-light-par-and-footprint-review/">http://growershouse.com/blog/california-light-works-solar-storm-800w-led-grow-light-par-and-footprint-review/</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,45 +351,45 @@
     <footer id="body-footer" class="footer">
         <nav class="footer-sites">
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="../../">Home</a></h4>
+        <h4 class="footer-heading "><a href="../../" class="footer-link">Home</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
-                <a class="footer-link" href="../../contact/">contact</a>
+            <li class="footer-item ">
+                <a href="../../contact/" class="footer-link">contact</a>
             </li>
-            <li class="footer-item">
-                <a class="footer-link" href="../../about/">about</a>
+            <li class="footer-item ">
+                <a href="../../about/" class="footer-link">about</a>
             </li>
         </ul>
     </section>
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="../">Light</a></h4>
+        <h4 class="footer-heading active"><a class="footer-link" href="../">Light</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
+            <li class="footer-item ">
                 <a class="footer-link" href="../calculator/">calculator</a>
             </li>
-            <li class="footer-item">
+            <li class="footer-item active">
                 <a class="footer-link" href="">about</a>
             </li>
         </ul>
     </section>
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="../../soil/">Soil</a></h4>
+        <h4 class="footer-heading "><a class="footer-link" href="../../soil/">Soil</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
+            <li class="footer-item ">
                 <a class="footer-link" href="../../soil/calculator/">calculator</a>
             </li>
-            <li class="footer-item">
+            <li class="footer-item ">
                 <a class="footer-link" href="../../soil/about/">about</a>
             </li>
         </ul>
     </section>
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="../../fertilizer/">Fertilizer</a></h4>
+        <h4 class="footer-heading "><a class="footer-link" href="../../fertilizer/">Fertilizer</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
+            <li class="footer-item ">
                 <a class="footer-link" href="../../fertilizer/calculator/">calculator</a>
             </li>
-            <li class="footer-item">
+            <li class="footer-item ">
                 <a class="footer-link" href="../../fertilizer/about/">about</a>
             </li>
         </ul>
