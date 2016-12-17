@@ -1,44 +1,44 @@
 ﻿<nav class="footer-sites">
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="/">Home</a></h4>
+        <h4 class="footer-heading @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")"><a href="/" class="footer-link">Home</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
-                <a class="footer-link" href="/contact">contact</a>
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Contact" ? "active" : "")">
+                <a href="/contact" class="footer-link">contact</a>
             </li>
-            <li class="footer-item">
-                <a class="footer-link" href="/about">about</a>
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")">
+                <a href="/about" class="footer-link">about</a>
             </li>
         </ul>
     </section>
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="/light">Light</a></h4>
+        <h4 class="footer-heading @(ViewContext.RouteData.Values["controller"].ToString() == "Light" ? "active" : "")"><a class="footer-link" href="/light">Light</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Light" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")">
                 <a class="footer-link" href="/light/calculator">calculator</a>
             </li>
-            <li class="footer-item">
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Light" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")">
                 <a class="footer-link" href="/light/about">about</a>
             </li>
         </ul>
     </section>
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="/soil">Soil</a></h4>
+        <h4 class="footer-heading @(ViewContext.RouteData.Values["controller"].ToString() == "Soil" ? "active" : "")"><a class="footer-link" href="/soil">Soil</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Soil" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")">
                 <a class="footer-link" href="/soil/calculator">calculator</a>
             </li>
-            <li class="footer-item">
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Soil" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")">
                 <a class="footer-link" href="/soil/about">about</a>
             </li>
         </ul>
     </section>
     <section class="footer-section">
-        <h4 class="footer-heading"><a class="footer-link" href="/fertilizer">Fertilizer</a></h4>
+        <h4 class="footer-heading @(ViewContext.RouteData.Values["controller"].ToString() == "Fertilizer" ? "active" : "")"><a class="footer-link" href="/fertilizer">Fertilizer</a></h4>
         <ul class="footer-content">
-            <li class="footer-item">
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Fertilizer" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")">
                 <a class="footer-link" href="/fertilizer/calculator">calculator</a>
             </li>
-            <li class="footer-item">
+            <li class="footer-item @(ViewContext.RouteData.Values["controller"].ToString() == "Fertilizer" && ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")">
                 <a class="footer-link" href="/fertilizer/about">about</a>
             </li>
         </ul>
